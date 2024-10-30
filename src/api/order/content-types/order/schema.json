@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "clients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::client.client",
+      "mappedBy": "order"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "orders"
+    },
+    "OrderDate": {
+      "type": "date",
+      "required": true
+    },
+    "OrderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Em processamento ",
+        "Enviado",
+        "Entregue",
+        "Cancelado"
+      ]
+    },
+    "Total": {
+      "type": "decimal"
+    }
+  }
+}

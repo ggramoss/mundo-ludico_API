@@ -1,0 +1,42 @@
+{
+    "kind": "collectionType",
+    "collectionName": "clients",
+    "info": {
+        "singularName": "client",
+        "pluralName": "clients",
+        "displayName": "Client"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "Name": {
+            "type": "string",
+            "required": true
+        },
+        "Email": {
+            "type": "email",
+            "required": true
+        },
+        "Adress": {
+            "type": "text",
+            "required": true
+        },
+        "products": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::product.product"
+        },
+        "Password": {
+            "type": "password",
+            "required": true
+        },
+        "order": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::order.order",
+            "inversedBy": "clients"
+        }
+    }
+}
