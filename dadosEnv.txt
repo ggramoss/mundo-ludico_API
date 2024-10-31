@@ -1,4 +1,4 @@
-
+https://dontpad.com/comandosapi
 # Server
 HOST=0.0.0.0
 PORT=1337
